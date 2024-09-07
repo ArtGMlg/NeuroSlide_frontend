@@ -2,7 +2,7 @@
 <!-- eslint-disable max-len -->
 <template>
   <div class="slide" :style="{ transform: `scale(${scaleFactor})` }">
-    <div class="Style1Title content" style="width: 1920px; height: 1080px; position: relative; background: #E5DFC8">
+    <div class="Style1Title content" style="width: 1920px; height: 1080px; position: relative;" :style="{ backgroundColor: color || '#E5DFC8' }">
       <img class="Image2"
         style="width: 1720px; height: 375px; left: 100px; top: 100px; position: absolute; border: 1px black solid"
         src="https://via.placeholder.com/1720x375" />
@@ -21,12 +21,16 @@
       <div class="20232024"
         contenteditable
         @input="(v) => emit('inputHeader', (v.target as HTMLElement).innerHTML || 'Header')"
-        style="width: 1472px; left: 180px; top: 631px; position: absolute; color: black; font-size: 64px; font-family: Lora; font-weight: 400; line-height: 76.80px; word-wrap: break-word">
+        style="width: 1472px; left: 180px; top: 631px; position: absolute; color: black; font-size: 64px; font-weight: 400; line-height: 76.80px; word-wrap: break-word"
+        :style="{ backgroundColor: color || '#E5DFC8' }"
+      >
         {{ header }} </div>
       <div
         contenteditable
         @input="(v) => emit('inputText', (v.target as HTMLElement).innerHTML || 'Text')"
-        style="left: 1081px; top: 953px; position: absolute; color: black; font-size: 36px; font-family: Lora; font-weight: 400; word-wrap: break-word">
+        style="left: 1081px; top: 953px; position: absolute; color: black; font-size: 36px; font-weight: 400; word-wrap: break-word"
+        :style="{ backgroundColor: color || '#E5DFC8' }"
+      >
         {{ text }}</div>
       <div class="Line4"
         style="width: 414px; height: 0px; left: 1920px; top: 980px; position: absolute; transform: rotate(180deg); transform-origin: 0 0; border: 1px black solid">
@@ -38,6 +42,21 @@
 <script setup lang="ts">
 import { ChartTypeRegistry } from 'chart.js'
 import { SlideContent } from '@/components/types/slides'
+import { useRoute } from 'vue-router'
+import { ref } from 'vue'
+
+const route = useRoute()
+
+const color = ref<string>('')
+const font = ref<string>('')
+
+if (route.query.color) {
+  color.value = `#${route.query.color.toString()}`
+}
+
+if (route.query.font) {
+  font.value = route.query.font.toString()
+}
 
 defineProps<{
   header: string

@@ -122,7 +122,7 @@ const submitAI = () => {
 
 const prompt = sessionStorage.getItem('prompt')
 
-if (route.query.chatId && prompt) {
+if (route.query.chatId && prompt && route.query.theme) {
   generateService.generate({
     chatId: route.query.chatId.toString(),
     message: prompt,
@@ -139,7 +139,7 @@ if (route.query.chatId && prompt) {
       res.forEach((r) => {
         slidesInfo.value.push({
           type: getType(i),
-          theme: 'blue',
+          theme: route.query.theme?.toString(),
           header: r.title || 'Title',
           text: r.text || 'Text',
         })

@@ -14,11 +14,11 @@
         src="rocket.png" />
       <div
         contenteditable @input="(v) => emit('inputHeader', (v.target as HTMLElement).innerHTML || 'Header')"
-        style="left: 50px; top: 188px; position: absolute; color: #1A6AF5; font-size: 128px; font-family: Montserrat; font-weight: 900; word-wrap: break-word">
+        style="left: 50px; top: 188px; position: absolute; color: #1A6AF5; font-size: 96px; font-family: Montserrat; font-weight: 900; word-wrap: break-word">
         {{ header }}</div>
       <div
         contenteditable @input="(v) => emit('inputText', (v.target as HTMLElement).innerHTML || 'Text')"
-        style="width: 1777px; text-align: left; left: 50px; top: 384px; position: absolute; color: black; font-size: 64px; font-family: Montserrat; font-weight: 500; word-wrap: break-word">
+        style="width: 1777px; text-align: left; left: 50px; top: 500px; position: absolute; color: black; font-size: 64px; font-family: Montserrat; font-weight: 500; word-wrap: break-word">
         {{ text }}</div>
     </div>
   </div>
