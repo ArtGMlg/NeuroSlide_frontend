@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
 import { QuillEditor } from '@vueup/vue-quill'
 import Vue3ColorPicker from 'vue3-colorpicker'
-// import PrimeVue from 'primevue/config'
-// import Aura from '@primevue/themes/aura'
+import PrimeVue from 'primevue/config'
+import Aura from '@primevue/themes/aura'
 import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
@@ -16,5 +16,13 @@ createApp(App)
   .use(store)
   .use(router)
   .use(Vue3ColorPicker)
+  .use(PrimeVue, {
+    theme: {
+      preset: Aura,
+      options: {
+        darkModeSelector: '.my-app-dark',
+      },
+    },
+  })
   .component('QuillEditor', QuillEditor)
   .mount('#app')

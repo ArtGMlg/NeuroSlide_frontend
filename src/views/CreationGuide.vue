@@ -131,6 +131,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import Card from 'primevue/card'
+import { generateService } from '@/init/services'
+import { uniqueId } from '@/reusable/functions'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const currentStep = ref<number>(1)
 
@@ -175,9 +180,14 @@ const nextStep = () => {
   }
 }
 
+const id = uniqueId()
+
 const finish = () => {
-  if (selectedFont.value) {
-    //
+  if (selectedFont.value && fileDoc.value) {
+    generateService.loadDoc(id, fileDoc.value).then(() => {
+      sessionStorage.setItem('prompt', prompt.value)
+      router.push(`/app?chatId=${id}&theme=${selectedStyle.value}&color=${selectedColor.value}&font=${selectedFont.value}`)
+    })
   }
 }
 

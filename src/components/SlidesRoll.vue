@@ -47,6 +47,7 @@ const loadSlideComponent = async (type: SlidesTypes, theme: SlidesThemes) => {
 
 // Загрузка компонентов слайдов при изменении данных
 const loadComps = async () => {
+  console.log('aaaaaaaaaaaaaaaaaaaaaaaa')
   const loadedComponents = await Promise.all(
     // eslint-disable-next-line no-return-await
     props.slidesInfo.map(async (s) => await loadSlideComponent(s.type, s.theme)),

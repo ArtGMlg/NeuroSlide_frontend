@@ -5,17 +5,19 @@ import CreationGuide from '../views/CreationGuide.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/',
-    name: 'home',
+    path: '/app',
+    name: 'app',
     component: HomeView,
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    path: '/guide',
+    name: 'guide',
     component: CreationGuide,
+  },
+  {
+    path: '/start',
+    name: 'start',
+    component: StartScreen,
   },
 ]
 

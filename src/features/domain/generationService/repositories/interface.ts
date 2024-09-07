@@ -1,5 +1,7 @@
-import { GenerationRequest, GenerationResponse } from '../models/generationModel'
+import { GenerationRequest, GenerationResponse, RewriteRequest } from '../models/generationModel'
 
 export interface GenerateRepository {
-  generate: (source: GenerationRequest) => Promise<GenerationResponse>
+  loadDoc: (id: string, source: File) => Promise<void>
+  generate: (source: GenerationRequest) => Promise<GenerationResponse[]>
+  rewrite: (source: RewriteRequest) => Promise<string>
 }

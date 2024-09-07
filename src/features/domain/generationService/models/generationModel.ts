@@ -3,8 +3,13 @@ export interface GenerationRequest {
   message: string
 }
 
+export interface RewriteRequest {
+  chatId: string
+  message: string
+  oldMessage: string
+}
+
 export interface GenerationResponse {
-  story: string
-  audio: string
-  image: string
+  title: string
+  text: string
 }

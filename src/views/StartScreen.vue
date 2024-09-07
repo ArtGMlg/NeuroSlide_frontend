@@ -1,16 +1,23 @@
+<!-- eslint-disable vuejs-accessibility/click-events-have-key-events -->
 <!-- eslint-disable vuejs-accessibility/alt-text -->
 <template>
   <div>
     <img src="image 5.png" class="logo">
     <div class="wrapper">
       <div class="welcome-text">Создание перезентаций с помощью искусственного интеллекта</div>
-      <div class="start-btn">Создать презентацию</div>
+      <div class="start-btn" @click="redirect">Создать презентацию</div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
+
+const redirect = () => {
+  router.push('/guide')
+}
 </script>
 
 <style scoped>
