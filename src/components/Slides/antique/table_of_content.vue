@@ -1,0 +1,88 @@
+<!-- eslint-disable vuejs-accessibility/alt-text -->
+<!-- eslint-disable max-len -->
+<template>
+  <div class="slide" :style="{ transform: `scale(${scaleFactor})` }">
+    <div class="Style1TableOfContent content" style="width: 1920px; height: 1080px; position: relative; background: #E5DFC8">
+      <div class="Line1"
+        style="width: 1152px; height: 0px; left: 1920px; top: 197px; position: absolute; transform: rotate(180deg); transform-origin: 0 0; border: 1px black solid">
+      </div>
+      <div class="Line2"
+        style="width: 883px; height: 0px; left: 915px; top: 1079px; position: absolute; transform: rotate(-90deg); transform-origin: 0 0; border: 1px black solid">
+      </div>
+      <div class="Frame1"
+        style="height: 588px; left: 768px; top: 344px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 147px; display: inline-flex">
+        <div class="Line2"
+          style="align-self: stretch; height: 0px; transform: rotate(180deg); transform-origin: 0 0; border: 1px black solid">
+        </div>
+        <div class="Line3"
+          style="align-self: stretch; height: 0px; transform: rotate(180deg); transform-origin: 0 0; border: 1px black solid">
+        </div>
+        <div class="Line4"
+          style="align-self: stretch; height: 0px; transform: rotate(180deg); transform-origin: 0 0; border: 1px black solid">
+        </div>
+        <div class="Line5"
+          style="align-self: stretch; height: 0px; transform: rotate(180deg); transform-origin: 0 0; border: 1px black solid">
+        </div>
+        <div class="Line6"
+          style="align-self: stretch; height: 0px; transform: rotate(180deg); transform-origin: 0 0; border: 1px black solid">
+        </div>
+      </div>
+      <img class="Image3" style="width: 768px; height: 1080px; left: 0px; top: 0px; position: absolute"
+        src="https://via.placeholder.com/768x1080" />
+      <div
+        style="left: 848px; top: 56px; position: absolute; color: black; font-size: 64px; font-family: Lora; font-weight: 400; line-height: 76.80px; word-wrap: break-word">
+        Содержание</div>
+      <div
+        style="left: 960px; top: 237px; position: absolute; color: black; font-size: 48px; font-family: Lora; font-weight: 400; line-height: 57.60px; word-wrap: break-word">
+        Пункт</div>
+      <div
+        style="left: 960px; top: 384px; position: absolute; color: black; font-size: 48px; font-family: Lora; font-weight: 400; line-height: 57.60px; word-wrap: break-word">
+        Пункт</div>
+      <div
+        style="left: 960px; top: 531px; position: absolute; color: black; font-size: 48px; font-family: Lora; font-weight: 400; line-height: 57.60px; word-wrap: break-word">
+        Пункт</div>
+      <div
+        style="left: 960px; top: 678px; position: absolute; color: black; font-size: 48px; font-family: Lora; font-weight: 400; line-height: 57.60px; word-wrap: break-word">
+        Пункт</div>
+      <div
+        style="left: 960px; top: 825px; position: absolute; color: black; font-size: 48px; font-family: Lora; font-weight: 400; line-height: 57.60px; word-wrap: break-word">
+        Пункт</div>
+      <div
+        style="left: 960px; top: 972px; position: absolute; color: black; font-size: 48px; font-family: Lora; font-weight: 400; line-height: 57.60px; word-wrap: break-word">
+        Пункт</div>
+      <div
+        style="left: 829px; top: 231px; position: absolute; color: black; font-size: 64px; font-family: Lora; font-weight: 400; line-height: 76.80px; word-wrap: break-word">
+        1</div>
+      <div
+        style="left: 824px; top: 378px; position: absolute; text-align: center; color: black; font-size: 64px; font-family: Lora; font-weight: 400; line-height: 76.80px; word-wrap: break-word">
+        2</div>
+      <div
+        style="left: 823px; top: 525px; position: absolute; text-align: center; color: black; font-size: 64px; font-family: Lora; font-weight: 400; line-height: 76.80px; word-wrap: break-word">
+        3</div>
+      <div
+        style="left: 824px; top: 672px; position: absolute; text-align: center; color: black; font-size: 64px; font-family: Lora; font-weight: 400; line-height: 76.80px; word-wrap: break-word">
+        4</div>
+      <div
+        style="left: 824px; top: 819px; position: absolute; text-align: center; color: black; font-size: 64px; font-family: Lora; font-weight: 400; line-height: 76.80px; word-wrap: break-word">
+        5</div>
+      <div
+        style="left: 823px; top: 966px; position: absolute; text-align: center; color: black; font-size: 64px; font-family: Lora; font-weight: 400; line-height: 76.80px; word-wrap: break-word">
+        6</div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ChartTypeRegistry } from 'chart.js'
+import { SlideContent } from '@/components/types/slides'
+
+defineProps<{
+  header: string
+  text: string
+  content: SlideContent<keyof ChartTypeRegistry | null>
+  scaleFactor: number
+  slideIdx: number
+}>()
+</script>
+
+<style scoped></style>
