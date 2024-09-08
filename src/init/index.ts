@@ -1,5 +1,7 @@
 import AjaxService from '@/features/core/ajax/service'
 
-const ajaxService = new AjaxService('http://127.0.0.1:8000')
+declare function getConfig (): { host: string }
+
+const ajaxService = new AjaxService(getConfig().host)
 
 export default ajaxService

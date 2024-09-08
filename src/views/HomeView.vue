@@ -174,6 +174,7 @@ if (route.query.chatId && prompt && route.query.theme) {
 
       loadComps()
     })
+    .catch(console.log)
 }
 </script>
 
