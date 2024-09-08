@@ -21,4 +21,8 @@ export default class GenerateService {
   public rewrite (source: RewriteRequest) {
     return this.repository.rewrite(source)
   }
+
+  public export (source: string[]) {
+    return this.repository.export(source)
+  }
 }

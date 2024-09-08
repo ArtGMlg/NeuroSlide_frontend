@@ -1,7 +1,12 @@
+<!-- eslint-disable vuejs-accessibility/alt-text -->
 <!-- eslint-disable vuejs-accessibility/click-events-have-key-events -->
 <!-- eslint-disable max-len -->
 <template>
   <div class="ed" v-if="slidesInfo.length">
+    <!-- <div>
+      <img src="image 5.png">
+      <div @click="toggleEx">Экспорт</div>
+    </div> -->
     <SlidesRoll
       :slides-info="slidesInfo"
       :active-comp="activeSlideIndex"
@@ -39,6 +44,9 @@
       </div>
     </div>
   </Popover>
+  <Popover ref="opEx">
+    <div @click="exportSlides('pdf')">PDF</div>
+  </Popover>
 </template>
 
 <script setup lang="ts">
@@ -55,6 +63,7 @@ import Popover from 'primevue/popover'
 const route = useRoute()
 
 const op = ref()
+const opEx = ref()
 
 const slidesInfo = ref<SlideType<keyof ChartTypeRegistry | null>[]>([])
 
@@ -104,6 +113,22 @@ const loadComps = () => {
 
 const toggle = (event: any) => {
   op.value.toggle(event)
+}
+
+const toggleEx = (event: any) => {
+  opEx.value.toggle(event)
+}
+
+const exportSlides = (type: string) => {
+  const htmls: string[] = []
+
+  Array.from(document.getElementsByClassName('slide')).forEach((e) => {
+    if (e.innerHTML) {
+      htmls.push(e.innerHTML)
+    }
+  })
+
+  generateService.export(htmls).then((r) => console.log(r))
 }
 
 const submitAI = () => {

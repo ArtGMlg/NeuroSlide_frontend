@@ -4,7 +4,7 @@
   <div>
     <img src="image 5.png" class="logo">
     <div class="wrapper">
-      <div class="welcome-text">Создание перезентаций с помощью искусственного интеллекта</div>
+      <div class="welcome-text">Создание презентаций с помощью искусственного интеллекта</div>
       <div class="start-btn" @click="redirect">Создать презентацию</div>
     </div>
   </div>
@@ -59,5 +59,7 @@ const redirect = () => {
   width: fit-content;
   padding: 0 25px;
   border-radius: 35px;
+  margin-top: 20px;
+  cursor: pointer;
 }
 </style>

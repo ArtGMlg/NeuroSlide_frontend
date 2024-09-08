@@ -48,4 +48,11 @@ export default class GenerateApiRepository implements GenerateRepository {
     },
   })
     .then((res) => res)
+
+  // eslint-disable-next-line max-len
+  public export: (source: string[]) => Promise<string> = (source: string[]) => this.ajaxService.post({
+    url: '/get_html',
+    data: source,
+  })
+    .then((res) => res)
 }
