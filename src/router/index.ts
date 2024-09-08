@@ -5,6 +5,10 @@ import CreationGuide from '../views/CreationGuide.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
+    path: '/',
+    redirect: '/start',
+  },
+  {
     path: '/app',
     name: 'app',
     component: HomeView,
